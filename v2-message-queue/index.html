@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Message Queue</title>
+	<script type="text/javascript" src="./phaser.min.js"></script>
+	<script type="text/javascript" src="./BootState.js"></script>
+	<script type="text/javascript" src="./LoadState.js"></script>
+	<script type="text/javascript" src="./PlayState.js"></script>
+	<script type="text/javascript" src="./Entity.js"></script>
+	<script type="text/javascript" src="./Runner.js"></script>
+	<script type="text/javascript" src="./Healer.js"></script>
+	<script type="text/javascript" src="./Hunter.js"></script>
+	<script type="text/javascript" src="./Message.js"></script>
+	<script type="text/javascript" src="./MessageQueue.js"></script>
+	<script type="text/javascript" src="./Debug.js"></script>
+</head>
+<body style="margin: 0;">
+<script type="text/javascript">
+	window.onload = function() {
+		var game = new Phaser.Game(600, 480, Phaser.AUTO, 'card-flipper');
+
+		// Add all states
+		game.state.add('play', PlayState);
+		game.state.add('load', LoadState);
+		game.state.add('boot', BootState);
+
+		// Start the initial state
+		game.state.start('boot');
+	};
+</script>
+</body>
+</html>
